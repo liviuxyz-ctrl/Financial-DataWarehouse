@@ -2,7 +2,7 @@
 from cassandra.cluster import Cluster
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
-from models import Asset, DataSource, FinancialData
+from src.models import Asset, DataSource, initialize_cassandra_connection
 
 
 class DatabaseManager:
@@ -21,8 +21,7 @@ class DatabaseManager:
     def create_tables(self):
         sync_table(Asset)
         sync_table(DataSource)
-        sync_table(FinancialData)
+        # Don't sync BaseFinancialData directly; concrete tables will be created dynamically
 
     def close(self):
         self.cluster.shutdown()
-        self.session.shutdown()

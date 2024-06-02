@@ -1,6 +1,5 @@
-# src/nasdaq_api_client.py
 import requests
-from src.config import API_KEY  # Ensure API key is securely imported from config
+from .config import API_KEY  # Assume API key is stored in config.py
 
 
 def fetch_financial_data(symbol):
@@ -9,12 +8,4 @@ def fetch_financial_data(symbol):
     if response.status_code == 200:
         return response.json()['dataset']['data']
     else:
-        try:
-            error_info = response.json()
-            if 'quandl_error' in error_info:
-                error_message = error_info['quandl_error']['message']
-                raise Exception(f"Error from API: {error_message}")
-            else:
-                raise Exception("Error: Dataset not found or URL is incorrect.")
-        except requests.JSONDecodeError:
-            raise Exception(f"Error: Response not in JSON format. Status Code: {response.status_code}")
+        response.raise_for_status()
