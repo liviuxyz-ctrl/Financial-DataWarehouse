@@ -1,91 +1,91 @@
 version: '3'
 services:
-    # Node 1 Configuration
-    DC1N1:
-        image: cassandra:3.10
-        command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 0; fi && /docker-entrypoint.sh cassandra -f'
-        networks:
-            - dc1ring
-        volumes:
-            - ./n1data:/var/lib/cassandra
-        environment:
-            - CASSANDRA_CLUSTER_NAME=dev_cluster
-            - CASSANDRA_SEEDS=DC1N1
-        expose:
-            - 7000  # Cluster communication
-            - 7001  # SSL Cluster communication
-            - 7199  # JMX
-            - 9042  # CQL
-            - 9160  # Thrift service
-        ports:
-            - "9042:9042"
-        ulimits:
-            memlock: -1
-            nproc: 32768
-            nofile: 100000
+  # Node 1 Configuration
+  DC1N1:
+    image: cassandra:3.10
+    command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 0; fi && /docker-entrypoint.sh cassandra -f'
+    networks:
+      - dc1ring
+    volumes:
+      - ./n1data:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=dev_cluster
+      - CASSANDRA_SEEDS=DC1N1
+    expose:
+      - 7000  # Cluster communication
+      - 7001  # SSL Cluster communication
+      - 7199  # JMX
+      - 9042  # CQL
+      - 9160  # Thrift service
+    ports:
+      - "9042:9042"
+    ulimits:
+      memlock: -1
+      nproc: 32768
+      nofile: 100000
 
-    # Node 2 Configuration
-    DC1N2:
-        image: cassandra:3.10
-        command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 60; fi && /docker-entrypoint.sh cassandra -f'
-        networks:
-            - dc1ring
-        volumes:
-            - ./n2data:/var/lib/cassandra
-        environment:
-            - CASSANDRA_CLUSTER_NAME=dev_cluster
-            - CASSANDRA_SEEDS=DC1N1
-        depends_on:
-            - DC1N1
-        expose:
-            - 7000
-            - 7001
-            - 7199
-            - 9042
-            - 9160
-        ports:
-            - "9043:9042"
-        ulimits:
-            memlock: -1
-            nproc: 32768
-            nofile: 100000
+  # Node 2 Configuration
+  DC1N2:
+    image: cassandra:3.10
+    command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 60; fi && /docker-entrypoint.sh cassandra -f'
+    networks:
+      - dc1ring
+    volumes:
+      - ./n2data:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=dev_cluster
+      - CASSANDRA_SEEDS=DC1N1
+    depends_on:
+      - DC1N1
+    expose:
+      - 7000
+      - 7001
+      - 7199
+      - 9042
+      - 9160
+    ports:
+      - "9043:9042"
+    ulimits:
+      memlock: -1
+      nproc: 32768
+      nofile: 100000
 
-    # Node 3 Configuration
-    DC1N3:
-        image: cassandra:3.10
-        command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 120; fi && /docker-entrypoint.sh cassandra -f'
-        networks:
-            - dc1ring
-        volumes:
-            - ./n3data:/var/lib/cassandra
-        environment:
-            - CASSANDRA_CLUSTER_NAME=dev_cluster
-            - CASSANDRA_SEEDS=DC1N1
-        depends_on:
-            - DC1N1
-        expose:
-            - 7000
-            - 7001
-            - 7199
-            - 9042
-            - 9160
-        ports:
-            - "9044:9042"
-        ulimits:
-            memlock: -1
-            nproc: 32768
-            nofile: 100000
+  # Node 3 Configuration
+  DC1N3:
+    image: cassandra:3.10
+    command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 120; fi && /docker-entrypoint.sh cassandra -f'
+    networks:
+      - dc1ring
+    volumes:
+      - ./n3data:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=dev_cluster
+      - CASSANDRA_SEEDS=DC1N1
+    depends_on:
+      - DC1N1
+    expose:
+      - 7000
+      - 7001
+      - 7199
+      - 9042
+      - 9160
+    ports:
+      - "9044:9042"
+    ulimits:
+      memlock: -1
+      nproc: 32768
+      nofile: 100000
 
-    # Portainer Configuration
-    portainer:
-        image: portainer/portainer
-        networks:
-            - dc1ring
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            - ./portainer-data:/data
-        ports:
-            - "9000:9000"
+  # Portainer Configuration
+  portainer:
+    image: portainer/portainer
+    networks:
+      - dc1ring
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer-data:/data
+    ports:
+      - "9000:9000"
 
 networks:
-    dc1ring: {}
+  dc1ring: { }

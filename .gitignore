@@ -3,3 +3,8 @@
 /n2data/
 /n3data/
 /portainer-data/
+
+
+# Ignore Python bytecode files
+**/__pycache__/
+*.zip
