@@ -3,7 +3,7 @@ import unittest
 import uuid
 import datetime
 from tests.base_test import BaseTest
-from src.models import Asset, DataSource, FinancialData
+from src.data.models import Asset, DataSource, FinancialData
 
 
 class TestDatabase(BaseTest):

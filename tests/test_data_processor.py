@@ -1,18 +1,19 @@
 # tests/test_data_processor.py
 import unittest
 from tests.base_test import BaseTest
-from src.data_processor import transform_data, store_financial_data
-from src.models import FinancialData
+from src.ingestion.transform import transform_financial_data, transform_commodity_data
+from src.ingestion.load import store_financial_data, store_commodity_data
+from src.data.models import FinancialData
 import uuid
 
 
 class TestDataProcessor(BaseTest):
-    def test_transform_data(self):
+    def test_transform_financial_data(self):
         raw_data = [
             ['2023-01-01', 150, 155, 145, 152, 100000],
             ['2023-01-02', 152, 158, 150, 157, 150000]
         ]
-        transformed = transform_data('AAPL', raw_data)
+        transformed = transform_financial_data('AAPL', raw_data)
         self.assertEqual(len(transformed), 2)
         self.assertEqual(transformed[0]['symbol'], 'AAPL')
         self.assertEqual(transformed[0]['date'], '2023-01-01')

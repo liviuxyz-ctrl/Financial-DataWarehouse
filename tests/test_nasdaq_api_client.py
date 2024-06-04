@@ -2,11 +2,11 @@
 import unittest
 from unittest.mock import patch
 from tests.base_test import BaseTest
-from src.nasdaq_api_client import fetch_financial_data
+from src.clients.nasdaq_api_client import fetch_financial_data
 
 
 class TestNasdaqApiClient(BaseTest):
-    @patch('src.nasdaq_api_client.requests.get')
+    @patch('src.clients.nasdaq_api_client.requests.get')
     def test_fetch_financial_data_success(self, mock_get):
         mock_response = unittest.mock.Mock()
         expected_data = {'dataset': {'data': [['2023-01-01', 150, 155, 145, 152, 100000]]}}
@@ -17,7 +17,7 @@ class TestNasdaqApiClient(BaseTest):
         data = fetch_financial_data('AAPL')
         self.assertEqual(data, expected_data['dataset']['data'])
 
-    @patch('src.nasdaq_api_client.requests.get')
+    @patch('src.clients.nasdaq_api_client.requests.get')
     def test_fetch_financial_data_failure(self, mock_get):
         mock_response = unittest.mock.Mock()
         mock_response.status_code = 404

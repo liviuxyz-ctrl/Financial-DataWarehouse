@@ -3,8 +3,8 @@ import unittest
 import os
 from cassandra.cqlengine.management import sync_table, drop_table
 from cassandra.cqlengine import connection
-from src.models import Asset, DataSource, FinancialData, initialize_cassandra_connection
-from src.database import DatabaseManager
+from src.data.models import Asset, DataSource, FinancialData, initialize_cassandra_connection
+from src.data.database import DatabaseManager
 
 
 class BaseTest(unittest.TestCase):
