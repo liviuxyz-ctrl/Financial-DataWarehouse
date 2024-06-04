@@ -33,8 +33,8 @@ def initialize_cassandra_connection():
     setup(Config.CASSANDRA_NODES, "financial_data", protocol_version=4)
 
 
-def sanitize_table_name(name):
-    return re.sub(r'\W|^(?=\d)', '_', name)
+# def sanitize_table_name(name):
+#     return re.sub(r'\W|^(?=\d)', '_', name)
 
 
 def create_financial_data_model(symbol):
@@ -57,6 +57,12 @@ def create_financial_data_model(symbol):
     return type(class_name, (BaseFinancialData,), attrs)
 
 
+def sanitize_table_name(name):
+    sanitized_name = re.sub(r'\W|^(?=\d)', '_', name)
+    print(f"Sanitized table name: {sanitized_name}")  # Debugging line
+    return sanitized_name
+
+
 def create_commodity_data_model(symbol):
     sanitized_symbol = sanitize_table_name(symbol.lower())
     class_name = f"CommodityData_{sanitized_symbol}"
@@ -70,4 +76,6 @@ def create_commodity_data_model(symbol):
         'value': columns.Float(),
         'symbol': columns.Text(index=True)
     }
-    return type(class_name, (Model,), attrs)
+    model = type(class_name, (Model,), attrs)
+    print(f"Created model: {model}")  # Debugging line
+    return model

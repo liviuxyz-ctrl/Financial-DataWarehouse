@@ -5,6 +5,7 @@ from src.data.models import initialize_cassandra_connection, create_commodity_da
 from src.clients.commodities_api_client import fetch_commodity_data
 from src.ingestion.transform import transform_commodity_data
 from src.ingestion.load import store_commodity_data
+from src.utils.log_helper import is_processed, mark_as_processed
 
 
 def get_or_create_source_id(source_name):
@@ -23,16 +24,22 @@ def get_or_create_asset_id(symbol):
 
 def populate_commodities_data():
     initialize_cassandra_connection()
-    commodities = ['WTI', 'BRENT']
+    commodities = ['WTI', 'BRENT', 'NATURAL_GAS', 'COPPER', 'ALUMINUM', 'WHEAT', 'CORN', 'COTTON', 'SUGAR', 'COFFEE']
     source_id = get_or_create_source_id('Alpha Vantage')
 
     for commodity in commodities:
+        if is_processed(commodity):
+            print(f"Skipping {commodity}, already processed.")
+            continue
+
         CommodityDataModel = create_commodity_data_model(commodity)
         sync_table(CommodityDataModel)
         raw_data = fetch_commodity_data(commodity)
         transformed_data = transform_commodity_data(commodity, raw_data)
         asset_id = get_or_create_asset_id(commodity)
         store_commodity_data(asset_id, source_id, transformed_data)
+
+        mark_as_processed(commodity)
 
 
 if __name__ == "__main__":

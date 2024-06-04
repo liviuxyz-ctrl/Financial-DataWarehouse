@@ -14,9 +14,13 @@ class DatabaseManager:
 
     def create_keyspace(self):
         self.session.execute(f"""
-            CREATE KEYSPACE IF NOT EXISTS {Config.KEYSPACE_NAME}
-            WITH REPLICATION = {{ 'class': 'SimpleStrategy', 'replication_factor': 1 }}
-        """)
+              CREATE KEYSPACE IF NOT EXISTS {Config.KEYSPACE_NAME}
+              WITH REPLICATION = {{ 'class': 'SimpleStrategy', 'replication_factor': 1 }}
+          """)
+        self.session.execute("""
+              CREATE KEYSPACE IF NOT EXISTS commodities_data
+              WITH REPLICATION = { 'class': 'SimpleStrategy', 'replication_factor': 1 }
+          """)
 
     def create_tables(self):
         sync_table(Asset)
