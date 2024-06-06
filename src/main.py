@@ -20,7 +20,7 @@ def main():
         initialize_cassandra_connection()
 
         # Populate SP500 data without limit (full run)
-        populate_sp500_data(limit=50)
+        populate_sp500_data(limit=1)
 
         # Populate Commodities data
         # populate_commodities_data()
