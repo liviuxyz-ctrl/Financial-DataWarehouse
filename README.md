@@ -91,16 +91,8 @@ maintainability and scalability.
 Details the RESTful API endpoints, including methods, parameters, and sample responses, facilitating effective data
 integration and manipulation.
 
-## Contributing
-
-Guidelines for contributors detailing coding standards, commit conventions, and pull request processes to maintain
-project standards.
-
 ## License
 
 Licensed under the MIT License. See [LICENSE.md](LICENSE) for more details.
 
----
 
-This README is crafted to effectively showcase your project’s architecture and setup, designed to assist users in
-understanding and contributing to the project while reflecting a professional level of project documentation.
