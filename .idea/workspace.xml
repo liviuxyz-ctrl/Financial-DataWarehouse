@@ -8,9 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72011d10-0c82-4441-9ab1-49968efdb821" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/RestAPi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest api/src/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest api/src/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest api/src/db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest api/src/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest api/src/utils/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processed_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/processed_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest api/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest api/src/api/assets.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest api/src/api/assets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest api/src/api/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest api/src/api/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest api/src/api/data_sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest api/src/api/data_sources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest api/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest api/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +57,7 @@
     <scope name="Only Source Code" pattern="file[DataWarehouse]:src//*" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -58,46 +68,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in test_data_processor.py.executor": "Run",
-    "Python tests.Python tests in test_database.py.executor": "Run",
-    "Python tests.Python tests in test_nasdaq_api_client.py.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.clear_data.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.models.executor": "Run",
-    "Python.nasdaq_api_client.executor": "Run",
-    "Python.nuke (1).executor": "Run",
-    "Python.nuke.executor": "Run",
-    "Python.populate_commodities_data.executor": "Run",
-    "Python.populate_sp500_data.executor": "Run",
-    "Python.test_imports.executor": "Run",
-    "Python.test_main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/liviuxyz/UVT/DW_WITH_SARPE/DataWarehouse",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in test_data_processor.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_database.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_nasdaq_api_client.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.clear_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nasdaq_api_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nuke (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.nuke.executor&quot;: &quot;Run&quot;,
+    &quot;Python.populate_commodities_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.populate_sp500_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_imports.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Shell Script.RestAPi.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/liviuxyz/UVT/DW_WITH_SARPE/DataWarehouse/rest api/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\rest api\src" />
+      <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\rest api\src\config" />
+      <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\rest api\src\db" />
+      <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\rest api\src\utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\src\utils" />
       <recent name="C:\Users\liviuxyz\UVT\DW_WITH_SARPE\DataWarehouse\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.docker compose ">
+  <component name="RunManager" selected="Shell Script.RestAPi">
     <configuration name="nuke" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DataWarehouse" />
       <option name="ENV_FILES" value="" />
@@ -149,10 +167,10 @@
       <item itemvalue="Python.nuke" />
       <item itemvalue="Python.populate_commodities_data" />
       <item itemvalue="Shell Script.docker compose " />
+      <item itemvalue="Shell Script.RestAPi" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main " />
         <item itemvalue="Python.populate_commodities_data" />
         <item itemvalue="Python.nuke" />
       </list>
@@ -161,8 +179,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -182,7 +200,9 @@
       <workItem from="1717596606723" duration="6145000" />
       <workItem from="1717665495188" duration="2553000" />
       <workItem from="1717669115574" duration="400000" />
-      <workItem from="1717669532155" duration="650000" />
+      <workItem from="1717669532155" duration="2615000" />
+      <workItem from="1717675936665" duration="298000" />
+      <workItem from="1717770921149" duration="996000" />
     </task>
     <servers />
   </component>

@@ -10,3 +10,4 @@
 *.zip
 /rest api/.idea/
 /rest api/.venv/
+/rest api/src/rest_api_env/
