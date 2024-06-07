@@ -270,6 +270,9 @@ curl -X GET "http://localhost:8000/api/v1/data_sources/{source_id}"
 
 ![image](https://github.com/liviuxyz-ctrl/DataWarehouse/assets/70070368/30ad1780-90cc-49cb-be44-45df3acffbeb)
 
+![image](https://github.com/liviuxyz-ctrl/DataWarehouse/assets/70070368/d81a715e-cfc0-4b3e-b62c-87fb8dbeb35d)
+
+
 ## License
 
 Licensed under the MIT License. See [LICENSE.md](LICENSE) for more details.
