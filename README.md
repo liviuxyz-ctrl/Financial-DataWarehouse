@@ -266,7 +266,7 @@
       - `commodity_id`: Identifier for the commodity.
       - `limit`: Controls the size of the returned data set.
       - `offset`: Specifies the pagination offset.
-    - Example: `http://127.0.0.1:8000/api/v1/commodities/brent?
+    - Example: `http://127.0.0.1:8000/api/v1/commodities/brent?`
 
 limit=20&offset=0`
 
