@@ -205,6 +205,8 @@ networks:
 
 The API is structured around resources representing financial data and commodities. It supports operations for retrieving data based on asset identifiers and includes pagination capabilities.
 
+For easier use, a **Postman collection** is provided. You can download it [here](https://github.com/liviuxyz-ctrl/DataWarehouse/blob/master/Financial%20Data%20API.postman_collection.json).
+
 ## Endpoint Details
 
 ### Financial Data Endpoints
