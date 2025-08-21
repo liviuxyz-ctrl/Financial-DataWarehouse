@@ -7,7 +7,6 @@ class Config:
     API_KEY = os.getenv('API_KEY')
     ALPHA_VANTAGE_API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
 
-    # Fail fast if required keys are missing
     if API_KEY is None:
         raise EnvironmentError("API_KEY environment variable not set")
     if ALPHA_VANTAGE_API_KEY is None:
